@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: 8d85c51fd927204499a9e54e0e35b609
+timeCreated: 1695772269
+licenseType: Free
+TextureImporter:
+  serializedVersion: 11
+  objectHideFlags: 0
+  correspondingSourceObject: {fileID: 0}
+  prefabInstance: {fileID: 0}
+  prefabAsset: {fileID: 0}
+  name:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: tennisball
+  - first:
+      213: 21300002
+    second: football
+  - first:
+      213: 21300004
+    second: voleyball
+  - first:
+      213: 21300006
+    second: basketball
+  - first:
+      213: 21300008
+    second: beachball
+  - first:
+      213: 21300010
+    second: americanfootball
+  externalObjects: {}
+  usedFileIDs: []
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 47
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 0
+  flipbookColumns: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tennisball
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 256, y: -256}
+        - {x: -256, y: -256}
+        - {x: -256, y: 256}
+        - {x: 256, y: 256}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de3bc5e367841f5bdca5cd801e4a813
+      internalID: 21300000
+      vertices:
+      - {x: 0, y: 512}
+      - {x: 512, y: 0}
+      - {x: 512, y: 512}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: football
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 256, y: -256}
+        - {x: -256, y: -256}
+        - {x: -256, y: 256}
+        - {x: 256, y: 256}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a93db65ce0a408681a06a18134eb21f
+      internalID: 21300002
+      vertices:
+      - {x: 0, y: 512}
+      - {x: 512, y: 0}
+      - {x: 512, y: 512}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: voleyball
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 256, y: -256}
+        - {x: -256, y: -256}
+        - {x: -256, y: 256}
+        - {x: 256, y: 256}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb8e95c2da9486ba61a6719a2242c49
+      internalID: 21300004
+      vertices:
+      - {x: 0, y: 512}
+      - {x: 512, y: 0}
+      - {x: 512, y: 512}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basketball
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 256, y: -256}
+        - {x: -256, y: -256}
+        - {x: -256, y: 256}
+        - {x: 256, y: 256}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394070b5ecd043b19061a4b22f085ed0
+      internalID: 21300006
+      vertices:
+      - {x: 0, y: 512}
+      - {x: 512, y: 0}
+      - {x: 512, y: 512}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beachball
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 516
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 256, y: -256}
+        - {x: -256, y: -256}
+        - {x: -256, y: 256}
+        - {x: 256, y: 256}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2026c1ff6dd344e78b4b3ae6ff024d5a
+      internalID: 21300008
+      vertices:
+      - {x: 0, y: 512}
+      - {x: 512, y: 0}
+      - {x: 512, y: 512}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: americanfootball
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1032
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 256, y: -256}
+        - {x: -256, y: -256}
+        - {x: -256, y: 256}
+        - {x: 256, y: 256}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93522d12ca01430db165925492168500
+      internalID: 21300010
+      vertices:
+      - {x: 0, y: 512}
+      - {x: 512, y: 0}
+      - {x: 512, y: 512}
+      - {x: 0, y: 0}
+      indices:
+      - 3
+      - 0
+      - 1
+      - 2
+      - 1
+      - 0
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices: []
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  spritePackingTag:
+  output:
+    textureImportInstructions:
+      compressedFormat: 0
+      uncompressedFormat: 0
+      desiredFormat: 0
+      usageMode: 0
+      colorSpace: 0
+      androidETC2FallbackFormat: 0
+      width: 0
+      height: 0
+      depth: 0
+      cubeIntermediateSize: 0
+      cubeMode: 0
+      cubeLayout: 0
+      compressionQuality: 0
+      androidETC2FallbackDownscale: 0
+      vtOnly: 0
+    sourceTextureInformation:
+      width: 0
+      height: 0
+      doesTextureContainAlpha: 0
+      sourceWasHDR: 0
+    importInspectorWarnings:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

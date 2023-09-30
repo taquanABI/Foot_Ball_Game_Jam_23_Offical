@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &687078895
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UIBallIconsSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 21300000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+    - {fileID: 21300002, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+    - {fileID: 21300004, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+    - {fileID: 21300006, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+    - {fileID: 21300008, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+    - {fileID: 21300010, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+  - {fileID: 21300002, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+  - {fileID: 21300004, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+  - {fileID: 21300006, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+  - {fileID: 21300008, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+  - {fileID: 21300010, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tennisball
+  - football
+  - voleyball
+  - basketball
+  - beachball
+  - americanfootball
+  m_RenderDataMap:
+  - first:
+      7172b341c51ce22419234c8bd3bcb100: 21300000
+    second:
+      texture: {fileID: 2800000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+      alphaTexture: {fileID: 0}
+      textureRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      textureRectOffset: {x: 0, y: 0}
+      atlasRectOffset: {x: 0, y: 0}
+      uvTransform: {x: 100, y: 256, z: 100, w: 256}
+      downscaleMultiplier: 1
+      settingsRaw: 65
+      secondaryTextures: []
+  - first:
+      97561cc7abe44044ea5d11e7d5dcaf78: 21300000
+    second:
+      texture: {fileID: 2800000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+      alphaTexture: {fileID: 0}
+      textureRect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 512
+        height: 512
+      textureRectOffset: {x: 0, y: 0}
+      atlasRectOffset: {x: 0, y: 516}
+      uvTransform: {x: 100, y: 256, z: 100, w: 772}
+      downscaleMultiplier: 1
+      settingsRaw: 65
+      secondaryTextures: []
+  - first:
+      ec3a50644f01bfc49b4a1dc0f8a26270: 21300000
+    second:
+      texture: {fileID: 2800000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+      alphaTexture: {fileID: 0}
+      textureRect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 512
+        height: 512
+      textureRectOffset: {x: 0, y: 0}
+      atlasRectOffset: {x: 516, y: 0}
+      uvTransform: {x: 100, y: 772, z: 100, w: 256}
+      downscaleMultiplier: 1
+      settingsRaw: 65
+      secondaryTextures: []
+  - first:
+      2deef00c54e42fd4281e87a48de9c61a: 21300000
+    second:
+      texture: {fileID: 2800000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+      alphaTexture: {fileID: 0}
+      textureRect:
+        serializedVersion: 2
+        x: 516
+        y: 516
+        width: 512
+        height: 512
+      textureRectOffset: {x: 0, y: 0}
+      atlasRectOffset: {x: 516, y: 516}
+      uvTransform: {x: 100, y: 772, z: 100, w: 772}
+      downscaleMultiplier: 1
+      settingsRaw: 65
+      secondaryTextures: []
+  - first:
+      dc527c0ea8272bc40816faa768d58861: 21300000
+    second:
+      texture: {fileID: 2800000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+      alphaTexture: {fileID: 0}
+      textureRect:
+        serializedVersion: 2
+        x: 0
+        y: 1032
+        width: 512
+        height: 512
+      textureRectOffset: {x: 0, y: 0}
+      atlasRectOffset: {x: 0, y: 1032}
+      uvTransform: {x: 100, y: 256, z: 100, w: 1288}
+      downscaleMultiplier: 1
+      settingsRaw: 65
+      secondaryTextures: []
+  - first:
+      9600116646043c248bdd68fe56f0268d: 21300000
+    second:
+      texture: {fileID: 2800000, guid: 8d85c51fd927204499a9e54e0e35b609, type: 3}
+      alphaTexture: {fileID: 0}
+      textureRect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 512
+        height: 512
+      textureRectOffset: {x: 0, y: 0}
+      atlasRectOffset: {x: 1032, y: 0}
+      uvTransform: {x: 100, y: 1288, z: 100, w: 256}
+      downscaleMultiplier: 1
+      settingsRaw: 65
+      secondaryTextures: []
+  m_Tag: UIBallIconsSpriteAtlas
+  m_IsVariant: 0
