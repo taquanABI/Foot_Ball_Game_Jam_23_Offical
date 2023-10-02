@@ -14,8 +14,8 @@ public class CanvasVictory : UICanvas
 
     public void CloseButton()
     {
-        
-        GameManager.ins.Load_HomeGame();
+        SoundManager.PlayEfxSound(SoundManager.ins.btn_Click);
+        GameManager.ins.Load_Game_Play();
         Close();
     }
 }

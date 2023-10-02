@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Draw_Line_Control : SingletonMonoBehaviour<Draw_Line_Control>
 {
-    [HideInInspector] public bool isCanDraw;
-    [HideInInspector] public bool is_Drawing;
+    public bool isCanDraw;
+    public camera_Follow cam_follow;
+    public UITutorial uITutorial;
+    public bool is_Drawing;
     [Tooltip("Colider của cầu thủ giữ bóng đầu tiên để vẽ từ đây, phải để 1 trong 3 Layer Default, Waeter thì Colider mới nhận function OnMouseEnter() ")]
     [HideInInspector] public GameObject o_Colider_Player_Start_Draw;
 
@@ -23,15 +25,15 @@ public class Draw_Line_Control : SingletonMonoBehaviour<Draw_Line_Control>
     public Transform tf_Plan_White_Line;
 
     [HideInInspector] public Player player_Init;
-    [HideInInspector] public List<Player> list_Player_Will_Draw;
+    public List<Player> list_Player_Will_Draw;
     /*[HideInInspector] */public List<Player> list_Player_Check_Once_Pass;
-    [HideInInspector] public List<Line> list_LineWhite_Draw;
-    [HideInInspector] public Ball ball;
+    public List<Line> list_LineWhite_Draw;
+    public Ball ball;
 
     [Tooltip("số lần vẽ")]
-    [HideInInspector] public int times_Drag;
+    public int times_Drag;
     [Tooltip("số lần được vẽ")]
-    [HideInInspector] public int times_Can_Drag_Max;
+    public int times_Can_Drag_Max;
     // Start is called before the first frame update
     void Start()
     {
@@ -134,6 +136,12 @@ public class Draw_Line_Control : SingletonMonoBehaviour<Draw_Line_Control>
     
     public void Set_Start_Draw()
     {
+        StartCoroutine(ie_Wait_player_Init());
+    }
+
+    IEnumerator ie_Wait_player_Init()
+    {
+        yield return new WaitUntil(()=> player_Init!= null);
         if (times_Drag < times_Can_Drag_Max)
         {
             line_Drag = (Line)(PoolController.Ins.miniPool_Line_Blue.Spawn(Vector3.zero, Quaternion.identity));
@@ -224,7 +232,7 @@ public class Draw_Line_Control : SingletonMonoBehaviour<Draw_Line_Control>
         
         }
 
-
+        
 
         var colider_Goal = Check_Ray_Cast.Ins.Get_Raycast_Colider_Goal();
         if (colider_Goal != null)
@@ -266,13 +274,22 @@ public class Draw_Line_Control : SingletonMonoBehaviour<Draw_Line_Control>
         //TODO: Camera move góc chéo
         is_Kicked = true;
         line_Drag.gameObject.SetActive(false);
-        Timer.Schedule(this, 0.7f, () =>
-        {
-            Set_Kick_Ball();
-        });
+
+        StartCoroutine(ie_Wait_cam_follow());
 
     }
     
+    IEnumerator ie_Wait_cam_follow()
+    {
+        yield return new WaitUntil(() => (cam_follow != null));
+        cam_follow.Set_Follow_Ball();
+        Timer.Schedule(this, Constants.Cons_Value.time_To_Complete_cam1, () =>
+        {
+            Set_Kick_Ball();
+        });
+    }
+
+
     public void Set_Kick_Ball()
     {
         for (int i = 0; i < list_LineWhite_Draw.Count; i++)

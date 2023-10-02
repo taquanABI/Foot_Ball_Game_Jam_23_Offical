@@ -87,6 +87,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         var sync = SceneManager.LoadSceneAsync("Home");
 
+        SoundManager.PlayMusicBg(SoundManager.ins.bg_Sound_All);
+
         yield return new WaitUntil(() => sync.isDone);
 
         LoadingScreen.ins.SetPercent(1f, 0.3f);
@@ -131,11 +133,12 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         var sync = SceneManager.LoadSceneAsync("GamePlay");
 
         yield return new WaitUntil(() => sync.isDone);
-
+        SoundManager.PlayMusicBg(SoundManager.ins.bg_Sound_On_Game);
     }
     public void Load_HomeGame()
     {
-        StartCoroutine(ie_Load_HomeGame());
+        //StartCoroutine(ie_Load_HomeGame());
+        StartCoroutine(ie_Load_HomeGame());//FAKEE
     }
     IEnumerator ie_Load_HomeGame()
     {
@@ -143,5 +146,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
         yield return new WaitUntil(() => sync.isDone);
         UIManager.ins.OpenUI(UIID.UICMainMenu);
+        SoundManager.StopMusicBg_Crown();
+        
     }
 }

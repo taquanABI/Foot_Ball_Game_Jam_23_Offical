@@ -183,6 +183,7 @@ Transform:
   - {fileID: 1338569490746407120}
   - {fileID: 1813271878220493252}
   - {fileID: 8339791082066871340}
+  - {fileID: 82971613648258544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2edde2b30a52a47a723529ef64736e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emjHolder: {fileID: 82971613648258544}
   e_Character: 1
   tf: {fileID: 0}
   anim: {fileID: 2666639524016079870}
@@ -206,6 +208,16 @@ MonoBehaviour:
   force_Kick: 10
   o_Arrow: {fileID: 6424066681635385502}
   o_Colider_Start_Hover: {fileID: 8205099819616020031}
+  camFollow: {fileID: 0}
+  winDestination: {fileID: 0}
+  m_CheckCollider: {fileID: 0}
+  m_MergeCollider: {fileID: 0}
+  winTime: 0
+  slideTime: 0
+  winEndTime: 0
+  loseEndTime: 0
+  happyEmjs: []
+  sadEmjs: []
 --- !u!1 &2810674550777090619
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +443,36 @@ Transform:
   m_Father: {fileID: 1338569492145948602}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6475906793182654404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 82971613648258544}
+  m_Layer: 0
+  m_Name: EmojiHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &82971613648258544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6475906793182654404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1338569492145948602}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7451898547128296896
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,6 +660,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7427013860900153103, guid: dc5145ac7749dff42a39660eb7b00718, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 31c7f0bbdc28eee46aa88f6367b7779c, type: 2}
     m_RemovedComponents:
     - {fileID: 7427013860900153145, guid: dc5145ac7749dff42a39660eb7b00718, type: 3}
     - {fileID: 7427013860900153205, guid: dc5145ac7749dff42a39660eb7b00718, type: 3}

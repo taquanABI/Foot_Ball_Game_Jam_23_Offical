@@ -11738,7 +11738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3582554860822475433}
         m_TargetAssemblyTypeName: CanvasFail, Assembly-CSharp
-        m_MethodName: CloseButton
+        m_MethodName: HomeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

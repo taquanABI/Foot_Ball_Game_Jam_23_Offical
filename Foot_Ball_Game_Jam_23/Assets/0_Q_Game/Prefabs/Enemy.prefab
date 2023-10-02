@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3813391766340909773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7086354339063239389}
+  m_Layer: 0
+  m_Name: EmojiHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7086354339063239389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3813391766340909773}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.86, y: 3.5, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4684258691223648207}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4684258691223648200
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +60,7 @@ Transform:
   m_Children:
   - {fileID: 4684258691281003835}
   - {fileID: 4684258691416073176}
+  - {fileID: 7086354339063239389}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -45,11 +76,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4249ce344bcf20a4690cdd0aefbaf945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emjHolder: {fileID: 7086354339063239389}
   e_Character: 0
   tf: {fileID: 0}
   anim: {fileID: 3012813215981708368}
   tf_Ball_In: {fileID: 0}
   force_Kick: 0
+  blewEmjs:
+  - {fileID: 1442192875407592, guid: 73b9633aaa649e647868f8d71414f2d6, type: 3}
+  - {fileID: 1283976268808352, guid: b304c3f436377824daa8115793cb7a59, type: 3}
 --- !u!1 &4684258691281003812
 GameObject:
   m_ObjectHideFlags: 0

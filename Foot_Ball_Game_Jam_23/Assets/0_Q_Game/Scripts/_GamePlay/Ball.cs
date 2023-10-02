@@ -5,7 +5,9 @@ using DG.Tweening;
 
 public class Ball : MonoBehaviour
 {
+    public Transform m_Level;
     bool isStoped_By_Enemy;
+    [HideInInspector] public bool isCam2_Move_Done;
     [HideInInspector] public bool isCan_Move;
     [HideInInspector] public Transform tf;
     public int index_Point_Moved;
@@ -47,6 +49,7 @@ public class Ball : MonoBehaviour
     {
         yield return new WaitUntil(() => Draw_Line_Control.ins != null);
         Draw_Line_Control.ins.ball = (this);
+        Draw_Line_Control.ins.cam_follow.tf_follow = (tf);
         Draw_Line_Control.ins.Set_Point_Start(tf);
     }
 
@@ -71,36 +74,115 @@ public class Ball : MonoBehaviour
             if (list_Player_Target.Count > 1 && (i < list_Player_Target.Count -1) && (i > 0))
             {
                 list_Player_Target[i - 1].Rot_To_Target(list_Player_Target[i].tf);
+
+
+
+
+
+                tf.SetParent(list_Player_Target[i - 1].tf_Ball_In);
+                tf.localPosition = Vector3.zero;
             }
             else if (list_Player_Target.Count == 1)
             {
+                if (list_Player_Target.Count == 1)
+                {
+                    Draw_Line_Control.ins.Set_Done_Draw();
+
+                    if (ie_Move != null)
+                    {
+                        StopCoroutine(ie_Move);
+
+                    }
+
+                    yield return null;
+                }
                 list_Player_Target[0].Rot_To_Target(list_Player_Target[1].tf);
+
+
+
+
+
+
+                tf.SetParent(list_Player_Target[0].tf_Ball_In);
+                tf.localPosition = Vector3.zero;
             }
 
             yield return Cache.GetWFS(Constants.Cons_Value.time_Rote_Character);
 
-            list_Player_Target[i].Set_Anim(Constants.anim_str.kick);
+            if (i > 0)
+            {
+                list_Player_Target[i-1].Set_Anim(Constants.anim_str.kick);
+                SoundManager.PlayEfxSound(SoundManager.ins.shoot_On);
+            }
 
             yield return Cache.GetWFS(Constants.Cons_Value.time_anim_Character_Kick);
 
-            list_Player_Target[i].Set_Anim(Constants.anim_str.idle);
+            if (i > 0)
+            {
+                list_Player_Target[i - 1].Set_Anim(Constants.anim_str.idle);
+            }
 
-            float distance = Vector3.Distance(tf.position, list_Player_Target[i].tf_Ball_In.position);
+
+
+
+
+            Vector3 destination = list_Player_Target[i].tf_Ball_In.position;
+
+            float distance = Vector3.Distance(tf.position, destination);
+
+
+
+
+
+
 
             force_Kick = list_Player_Target[i].force_Kick;
 
             float time_Move_Each_Point = distance / force_Kick;
+
+
+            tf.SetParent(m_Level);
+
             var temp = tf.DOMove(list_Player_Target[i].tf_Ball_In.position, time_Move_Each_Point).SetEase(Ease.OutQuad).OnComplete(() => Debug.Log(" Kick " + i.ToString()));
 
+
+
+            temp.OnUpdate(() =>
+            {
+                if (Vector3.Distance(tf.position, destination) < 0.2f)
+                {
+                    list_Player_Target[i].DisplayEmj(true);
+                    temp.Kill();
+                }
+            });
+
+
+            colider_Ball.transform.DOLocalRotate(360 * Vector3.right, 1f, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.Linear).SetLoops(-1);
+
+
+
+
+
+
+
             yield return temp.WaitForCompletion();
+            SoundManager.PlayEfxSound(SoundManager.ins.player_take_ball);
 
             list_Player_Target[i].Set_Anim(Constants.anim_str.idle);
             //yield return Cache.GetWFS(Constants.Cons_Value.time_Rote_Character);
         }
+
+        Draw_Line_Control.ins.cam_follow.Set_Follow_Last_Player(list_Player_Target[list_Player_Target.Count - 1].tf);
+
+        //TODO: di chuyển camera đến th cuối cùng
+
         if (goal_Reach != null)
         {
+            if (DataManager.ins.playerData.level != 1 && DataManager.ins.playerData.level != 2)
+            {
+                yield return new WaitUntil(() => (isCam2_Move_Done));
+            }
 
-            
 
             if (Get_Is_Pass_All_Player())
             {
@@ -117,6 +199,9 @@ public class Ball : MonoBehaviour
                 var temp = tf.DOMove(goal_Reach.tf_Target_Win.position, time_Move_Each_Point).SetEase(Ease.OutQuad).OnComplete(() => Debug.Log(" Kick on gold"));
 
                 yield return temp.WaitForCompletion();
+                SoundManager.PlayEfxSound(SoundManager.ins.shoot_luoi);
+
+                IngameManager.ins.Set_Goal_Effect();
 
             }
             else
@@ -157,9 +242,11 @@ public class Ball : MonoBehaviour
         if (isPass_All_Player && reach_Goal)
         {
             IngameManager.ins.Set_Level_Win();
+            list_Player_Target[list_Player_Target.Count - 1].Call_Finalanim(true);
         }
         else
         {
+            list_Player_Target[list_Player_Target.Count - 1].Call_Finalanim(false);
             IngameManager.ins.Set_Level_Fail();
         }
     }
@@ -188,12 +275,18 @@ public class Ball : MonoBehaviour
         Debug.Log(" Stopp    ");
         isStoped_By_Enemy = true;
 
+
+        foreach (var player in IngameManager.ins.list_Player_Inlevel)
+            player.DisplayEmj(false);
+
         tf.DOKill();
 
         Set_Cancel_Move();
         //StopCoroutine(IE_Set_Move()); // Lệnh này méo dừng quả bóng lại đc, lại phải if (!isStoped_By_Enemy) 
 
         IngameManager.ins.Set_Level_Fail();
+
+
     }
 
 

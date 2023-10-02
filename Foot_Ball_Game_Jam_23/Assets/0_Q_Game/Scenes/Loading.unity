@@ -1753,6 +1753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702182820}
   - component: {fileID: 702182819}
+  - component: {fileID: 702182821}
   m_Layer: 0
   m_Name: DataManager
   m_TagString: Untagged
@@ -1808,6 +1809,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &702182821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702182818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d192563e7c2fc4a8f832aeeaf75892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &738196149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2827,21 +2840,20 @@ MonoBehaviour:
   - type: 1
     obj: {fileID: 5079668535074106108, guid: 2aa745911d82c504e909456edc806cb2, type: 3}
   list_Level:
+  - {fileID: 6429855757183114522, guid: 9444b0ee3ef997745befc064e5b3f3ef, type: 3}
+  - {fileID: 6429855757183114522, guid: 3672ed6b6398340449cfeb373d0b9f30, type: 3}
+  - {fileID: 6429855757183114522, guid: 3e1f3e1ba9eba79479e4a4289508210f, type: 3}
   - {fileID: 6429855757183114522, guid: 9d13b5bca91f1864e819c927dbfb1152, type: 3}
   - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
-  - {fileID: 6429855757183114522, guid: ff6ec4e383ab14b48915cf3a6e9a5f2b, type: 3}
+  - {fileID: 6429855757183114522, guid: 9d13b5bca91f1864e819c927dbfb1152, type: 3}
+  - {fileID: 6429855757183114522, guid: 5419f09a201ca1542a98739d84a12628, type: 3}
+  - {fileID: 6429855757183114522, guid: d3e6f04cdb8d66f4d96c1a8a0c29b6a4, type: 3}
+  - {fileID: 6429855757183114522, guid: 8895fced2ca886848b710c6a48ef72a9, type: 3}
+  - {fileID: 6429855757183114522, guid: e483c4ab2633e0e49803c953dc5596b3, type: 3}
+  cam_1_vec_Offset_Position: {x: 17.3, y: 13.6, z: -15.25}
+  cam_1_vec_Offset_Rotation: {x: 34, y: -48, z: 0}
+  cam_2_offset_Distance_Cam2_Player: 10.9
+  cam_2_offsetY_Cam2_Player: 6.6
   list_count_Point_Connect_Max:
   - level: 1
     max_Count_Point_Connect: 15
@@ -4106,7 +4118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDontDestroy: 1
-  o_Player: {fileID: 0}
 --- !u!4 &1618056715
 Transform:
   m_ObjectHideFlags: 0
@@ -4786,23 +4797,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundSound: {fileID: 0}
   efxSound: {fileID: 0}
-  bgMusic:
-    Clip: {fileID: 0}
+  shoot_On:
+    Clip: {fileID: 8300000, guid: f1c447943bd741c48b84af9755324c47, type: 3}
     Volume: 1
-  UIClick:
-    Clip: {fileID: 0}
+  shoot_Fail:
+    Clip: {fileID: 8300000, guid: b5dd8581d1c1dc34fa228168d382fd74, type: 3}
     Volume: 1
-  UIClick_Fail:
-    Clip: {fileID: 0}
+  btn_Click:
+    Clip: {fileID: 8300000, guid: 93d51d62967a53b48b2edb12141734fa, type: 3}
     Volume: 1
-  upgrade:
-    Clip: {fileID: 0}
+  bg_Sound_All:
+    Clip: {fileID: 8300000, guid: cce039879d95eba418e5afbe142f60b8, type: 3}
     Volume: 1
-  win:
-    Clip: {fileID: 0}
+  bg_Sound_On_Game:
+    Clip: {fileID: 8300000, guid: 80cf478e29232e34dbe2cc6ee8cb5ce1, type: 3}
     Volume: 1
-  attack:
-    Clip: {fileID: 0}
+  firework:
+    Clip: {fileID: 8300000, guid: dd50e2562062e7c41b71120831b886d9, type: 3}
+    Volume: 1
+  keeper_Clap:
+    Clip: {fileID: 8300000, guid: 0a43366cdea74d44eb74865a68784863, type: 3}
+    Volume: 1
+  player_Xoay:
+    Clip: {fileID: 8300000, guid: 73294f41394bfe84ab9d5b5f594a750a, type: 3}
+    Volume: 1
+  shoot_luoi:
+    Clip: {fileID: 8300000, guid: 90dc85e812090964d8aa8e3101e31e94, type: 3}
+    Volume: 1
+  player_take_ball:
+    Clip: {fileID: 8300000, guid: 28b9b0d51d7d7e942976f4e9be2f1207, type: 3}
+    Volume: 1
+  pop_up:
+    Clip: {fileID: 8300000, guid: cbdd587f417b5114abe9d99d9c771cfe, type: 3}
+    Volume: 1
+  Win:
+    Clip: {fileID: 8300000, guid: 973412a1c5c2639499af531695d719b5, type: 3}
+    Volume: 1
+  Fail:
+    Clip: {fileID: 8300000, guid: 60c2aac153db587469a9c85a6708451b, type: 3}
     Volume: 1
 --- !u!4 &1896433464
 Transform:

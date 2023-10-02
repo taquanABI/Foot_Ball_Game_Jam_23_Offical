@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class IngameManager : SingletonMonoBehaviour<IngameManager>
 {
-    /*[HideInInspector] */public List<Player> list_Player_Inlevel;
+    public GameObject winEffect;
+
+    public void Set_Goal_Effect()
+    {
+        winEffect.SetActive(true);
+    }
+
+    /*[HideInInspector] */
+    public List<Player> list_Player_Inlevel;
     [HideInInspector] public GameObject o_Arrow_Tut;
     protected override void Awake()
     {
@@ -31,13 +39,18 @@ public class IngameManager : SingletonMonoBehaviour<IngameManager>
 
     public void Set_off_Tut()
     {
+        StartCoroutine(ie_Wait_player_Init());
+    }
+    IEnumerator ie_Wait_player_Init()
+    {
+        yield return new WaitUntil(() => o_Arrow_Tut != null);
         o_Arrow_Tut.SetActive(false);
     }
 
-
     public void Set_Level_Win()
     {
-        Timer.Schedule(this, 1, () =>
+
+        Timer.Schedule(this, 6, () =>
         {
             //TODO: Hiện encard win sau khi Win ở chỗ này
             Debug.Log(" Show win ");
@@ -48,7 +61,7 @@ public class IngameManager : SingletonMonoBehaviour<IngameManager>
     
     public void Set_Level_Fail()
     {
-        Timer.Schedule(this, 1, () =>
+        Timer.Schedule(this, 3, () =>
         {
             //TODO: Hiện encard fail sau khi fail ở chỗ này
             Debug.Log(" Show fail ");

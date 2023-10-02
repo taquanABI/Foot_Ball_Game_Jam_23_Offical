@@ -9,6 +9,7 @@ public partial class SoundManager : MonoBehaviour
     public static SoundManager ins;
 
     [HideInInspector] public AudioSource backgroundSound;
+    [HideInInspector] public AudioSource backgroundSound_Crown;
     [HideInInspector] public AudioSource efxSound;
 
 
@@ -24,6 +25,7 @@ public partial class SoundManager : MonoBehaviour
             Destroy(gameObject);
         }
         backgroundSound = gameObject.AddComponent<AudioSource>();
+        backgroundSound_Crown = gameObject.AddComponent<AudioSource>();
         efxSound = gameObject.AddComponent<AudioSource>();
     }
 
@@ -38,6 +40,16 @@ public partial class SoundManager : MonoBehaviour
             ins.backgroundSound.Play();
         }
     }
+    public static void PlayMusicBg_Crawn(SoundInfor sound)
+    {
+        if(DataManager.ins.playerData.isMusic)
+        {
+            ins.backgroundSound_Crown.clip = sound.Clip;
+            ins.backgroundSound_Crown.volume = sound.Volume;
+            ins.backgroundSound_Crown.loop = true;
+            ins.backgroundSound_Crown.Play();
+        }
+    }
     public static void StopMusicBg()
     {
         ins.backgroundSound.Stop();
@@ -45,6 +57,15 @@ public partial class SoundManager : MonoBehaviour
     public static void SetupMusicBg(bool _b)
     {
         ins.backgroundSound.mute = !_b;
+    }
+    
+    public static void StopMusicBg_Crown()
+    {
+        ins.backgroundSound_Crown.Stop();
+    }
+    public static void SetupMusicBg_Crown(bool _b)
+    {
+        ins.backgroundSound_Crown.mute = !_b;
     }
 
     //volume: 0 ~ 1

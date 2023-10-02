@@ -21,7 +21,16 @@ public class Colider_Ball : MonoBehaviour
         {
             first_Stop = true;
             
+            Colider_Enemy_Trap colider_Enemy_Trap = other.GetComponent<Colider_Enemy_Trap>();
+            Debug.Log("Va vao Trap");
+            if (colider_Enemy_Trap != null)
+            {
+                colider_Enemy_Trap.Set_Stop_Enemy();
+            }
             ball.Set_Stop_By_Enemy();
+
+
+            other.GetComponentInParent<Enemy>().DisplayEmj();
         }
     }
 }
